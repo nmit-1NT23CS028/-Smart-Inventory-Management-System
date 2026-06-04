@@ -1,66 +1,209 @@
 # Smart Inventory Management System (SIMS)
 
-Production-ready full-stack inventory management application.
+A production-ready full-stack inventory management platform designed to streamline inventory operations, order processing, supplier management, and business analytics. The system provides secure role-based access, real-time inventory tracking, performance optimization through Redis caching, and automated deployment workflows.
 
-## Stack
-- **Frontend**: Next.js 14 (App Router) + React 18 + TailwindCSS
-- **Backend**: Node.js + Express.js (REST API)
-- **Database**: MySQL 8
-- **Cache/Sessions**: Redis 7
-- **Auth**: JWT + bcrypt
-- **DevOps**: Docker, Docker Compose, GitHub Actions CI/CD
+---
 
 ## Features
-- JWT auth with Role-Based Access Control (Admin / Manager / Staff)
-- Dashboard: inventory overview, low-stock alerts, analytics, recent transactions, activity logs
-- Inventory: products, categories, SKU, barcode, stock tracking, adjustment history
-- Orders: purchase orders, sales orders, status tracking
-- Suppliers management
-- User management with role assignment
-- Redis caching for products & analytics
-- Dark/Light mode, responsive sidebar UI
-- Swagger API docs at `/api/docs`
 
-## Folder Structure
-```
+### Authentication & Authorization
+
+* JWT-based Authentication
+* Role-Based Access Control (Admin, Manager, Staff)
+* Secure Password Hashing (bcrypt)
+
+### Inventory Management
+
+* Product & Category Management
+* SKU and Barcode Tracking
+* Stock Monitoring & Adjustment History
+* Low Stock Alerts
+
+### Order & Supplier Management
+
+* Purchase Orders
+* Sales Orders
+* Order Status Tracking
+* Supplier Management
+
+### Dashboard & Analytics
+
+* Inventory Overview
+* Product Analytics
+* Recent Transactions
+* User Activity Logs
+
+### Performance & Scalability
+
+* Redis Caching
+* Optimized Database Queries
+* RESTful API Architecture
+* Scalable Backend Services
+
+### DevOps
+
+* Dockerized Deployment
+* Docker Compose Setup
+* GitHub Actions CI/CD Pipeline
+
+---
+
+## Technology Stack
+
+| Layer           | Technologies                           |
+| --------------- | -------------------------------------- |
+| Frontend        | Next.js, React.js, Tailwind CSS        |
+| Backend         | Node.js, Express.js                    |
+| Database        | MySQL                                  |
+| Cache           | Redis                                  |
+| Authentication  | JWT, bcrypt                            |
+| DevOps          | Docker, Docker Compose, GitHub Actions |
+| Version Control | Git, GitHub                            |
+
+---
+
+## Project Structure
+
+```bash
 sims/
-├── backend/        # Express REST API
-├── frontend/       # Next.js app
-├── db/             # SQL schema + seeds
+├── frontend/                 # Next.js Frontend
+├── backend/                  # Express.js REST APIs
+├── db/                       # Database Schema & Seed Scripts
 ├── docker-compose.yml
-└── .github/workflows/ci.yml
+├── .env.example
+└── .github/
+    └── workflows/
+        └── ci.yml
 ```
 
-## Quick Start (Docker)
+---
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js (v18+)
+* MySQL 8+
+* Redis 7+
+* Docker & Docker Compose (Optional)
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/your-username/smart-inventory-management-system.git
+
+cd smart-inventory-management-system
+```
+
+### Configure Environment Variables
+
 ```bash
 cp .env.example .env
+```
+
+Update the environment variables as required.
+
+---
+
+## Run with Docker
+
+```bash
 docker compose up --build
 ```
-- Frontend: http://localhost:3000
-- Backend:  http://localhost:5000/api
-- API Docs: http://localhost:5000/api/docs
 
-## Default Seed Users
-| Role    | Email                | Password   |
-|---------|----------------------|------------|
-| Admin   | admin@sims.local     | Admin@123  |
-| Manager | manager@sims.local   | Manager@123|
-| Staff   | staff@sims.local     | Staff@123  |
+### Application URLs
 
-## Local Dev (no Docker)
-```bash
-# backend
-cd backend && npm install && npm run dev
-# frontend
-cd frontend && npm install && npm run dev
+```text
+Frontend  : http://localhost:3000
+Backend   : http://localhost:5000/api
+API Docs  : http://localhost:5000/api/docs
 ```
-Ensure MySQL + Redis are running and `.env` is set.
+
+---
+
+## Run Locally
+
+### Backend
+
+```bash
+cd backend
+
+npm install
+
+npm run dev
+```
+
+### Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Ensure MySQL and Redis services are running before starting the application.
+
+---
 
 ## API Documentation
-Interactive Swagger UI: `GET /api/docs`
 
-## CI/CD
-GitHub Actions workflow at `.github/workflows/ci.yml` runs lint, tests, and builds Docker images on every push.
+Swagger Documentation:
 
-## License
-MIT
+```text
+GET /api/docs
+```
+
+Provides interactive API testing and endpoint documentation.
+
+---
+
+## CI/CD Pipeline
+
+GitHub Actions workflow automatically:
+
+* Installs dependencies
+* Runs application checks
+* Executes tests
+* Builds Docker images
+* Validates deployment configuration
+
+Workflow Location:
+
+```bash
+.github/workflows/ci.yml
+```
+
+---
+
+## Key Highlights
+
+* Full-Stack Enterprise Application
+* JWT Authentication & RBAC
+* Inventory & Order Management
+* Redis Caching Integration
+* Dockerized Architecture
+* CI/CD Automation
+* Scalable REST API Design
+* Responsive Modern UI
+
+---
+
+## Future Enhancements
+
+* Multi-Warehouse Inventory Support
+* Cloud Deployment (AWS / Azure)
+* Email & Notification Services
+* Inventory Demand Forecasting
+* Advanced Business Analytics
+
+---
+
+## Author
+
+**Anshika Singh**
